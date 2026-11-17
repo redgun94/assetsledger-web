@@ -1,61 +1,86 @@
-# assetsledger-web
+# AssetsLedger Web
 
-Angular client for AssetsLedger: borrower management and proof-of-funds verification for mortgage loan officers. Consumes the AssetsLedger Spring Boot REST API.
+Angular client for **AssetsLedger**, a proof-of-funds platform for mortgage loan officers. Loan officers sign up, complete their professional profile, manage their borrowers and, in a later phase, verify borrowers' assets through Plaid.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.3.
+This repository is the front end. It consumes the AssetsLedger REST API, built with Spring Boot 4, Spring Security (JWT) and PostgreSQL, which lives in its own repository.
 
-## Development server
+> **Status:** early development. The project is scaffolded; the features below are being built one by one.
 
-To start a local development server, run:
+## Tech stack
+
+- Angular 19 (standalone components)
+- TypeScript 5.7
+- RxJS 7
+- Karma + Jasmine for unit tests
+
+## Features
+
+| Feature | Route | Backend endpoints | Status |
+| --- | --- | --- | --- |
+| Sign up and log in | `/register`, `/login` | `POST /api/v1/auth/register`, `POST /api/v1/auth/login` | Planned |
+| Onboarding: professional profile and company search | `/onboarding` | `GET /api/v1/me`, `GET`/`POST /api/v1/companies`, `POST /api/v1/me/loan-officer` | Planned |
+| Borrower dashboard | `/clients` | `GET`/`POST /api/v1/me/clients` | Planned |
+| Borrower detail | `/clients/:id` | `GET`/`PUT`/`DELETE /api/v1/me/clients/{clientId}` | Planned |
+| Asset verification (Plaid) | — | Not built yet in the API | Later phase |
+
+## Project structure
+
+The code is organized by feature, mirroring the package-by-feature layout of the backend:
+
+```
+src/app/
+├── core/                 # Loaded once for the whole app
+│   ├── auth.service.ts       # Logs in and stores the token
+│   ├── auth.interceptor.ts   # Adds the Authorization header to every API call
+│   ├── auth.guard.ts         # Protects routes that require a session
+│   └── app.routes.ts         # Lazy-loads each feature by URL
+├── features/
+│   ├── auth/             # Login and registration
+│   ├── onboarding/       # Professional profile and company search
+│   └── clients/          # Borrower list, detail, form and service
+└── shared/               # Reusable UI pieces (status badge, layout, buttons, form errors)
+```
+
+## User flow
+
+1. `/register` creates the account (status `PENDING_PROFILE`).
+2. `/login` returns a JWT access token.
+3. The auth guard lets the user into protected routes.
+4. `GET /api/v1/me` reports the account status.
+5. `/onboarding`: the loan officer completes the profile and selects or registers their company; the account becomes `ACTIVE`.
+6. `/clients`: the borrower dashboard.
+
+## Getting started
+
+### Prerequisites
+
+- Node.js 18.19+, 20.11+ or 22 (supported by Angular 19)
+- Angular CLI 19: `npm install -g @angular/cli`
+- The AssetsLedger API running locally on `http://localhost:9000`, with `app.cors.allowed-origins` set to `http://localhost:4200`
+
+### Install and run
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open `http://localhost:4200`. The app reloads automatically when source files change.
 
-## Code scaffolding
+### Other commands
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+| Command | What it does |
+| --- | --- |
+| `ng build` | Production build into `dist/` |
+| `ng test` | Unit tests with Karma and Jasmine |
+| `ng generate component features/<feature>/<name>` | Creates a component inside a feature folder |
 
-```bash
-ng generate component component-name
-```
+## Security notes
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Authentication is handled by the API with stateless JWT access tokens. The front end sends the token in the `Authorization: Bearer` header through an HTTP interceptor.
+- Every borrower query is scoped on the server to the profile in the token, so the front end never sends an owner id.
+- Server-side validation errors arrive as RFC 9457 `ProblemDetail` responses with a field-level `errors` map, which forms display under each field.
 
-```bash
-ng generate --help
-```
+## License
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+© 2026 Leandro Boucourt. All rights reserved.
