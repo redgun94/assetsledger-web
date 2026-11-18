@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Client verification detail</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F5C4A}a:hover{color:#0A4034}
+</style>
+</helmet>
+<div style="min-height: 1040px; background: #F3F5F4; color: #12211C; font-family: 'IBM Plex Sans', system-ui, sans-serif">
+<header style="background: #12211C; color: #FFFFFF; padding: 0 40px; min-height: 60px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
+<div style="font-size: 18px; font-weight: 700">AssetsLedger</div>
+<a href="Dashboard.dc.html" style="color: #D5DEDA; text-decoration: none; font-size: 15px; display: flex; align-items: center; min-height: 44px">← Clients</a>
+</header>
+
+<main style="max-width: 1240px; margin: 0 auto; box-sizing: border-box; padding: 32px 40px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+<h1 style="margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.01em">Sample Client A</h1>
+<span style="padding: 5px 10px; border-radius: 6px; background: #FBEFD9; color: #9A4A06; font-size: 13px; font-weight: 600">Needs review</span>
+</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #50605A">SSN •••-••-4821 · Miami, FL</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<button type="button" style="height: 44px; padding: 0 18px; border: 1px solid #B9C4C0; border-radius: 8px; background: #FFFFFF; color: #12211C; font: 600 15px 'IBM Plex Sans', sans-serif">Refresh report</button>
+<button type="button" style="height: 44px; padding: 0 18px; border: 0; border-radius: 8px; background: #0F5C4A; color: #FFFFFF; font: 600 15px 'IBM Plex Sans', sans-serif">Download PDF</button>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+
+<section style="background: #FFFFFF; border: 1px solid #D9E0DD; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+<h2 style="margin: 0; font-size: 18px; font-weight: 600">Funds against requirement</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="font-size: 13px; color: #50605A">Verified funds</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 30px; font-weight: 500">$84,250.00</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="font-size: 13px; color: #50605A">Required</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 30px; font-weight: 500; color: #50605A">$72,000.00</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="font-size: 13px; color: #50605A">Pending review</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 30px; font-weight: 500; color: #9A4A06">$15,500.00</div>
+</div>
+</div>
+<div role="img" aria-label="Verified funds cover the requirement; part is pending review" style="height: 14px; border-radius: 7px; background: #E7ECEA; display: flex; overflow: hidden">
+<div style="width: 68%; background: #0F5C4A"></div>
+<div style="width: 16%; background: #C98A2B"></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; font-size: 14px">
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 12px; background: #F3F5F4; border-radius: 8px"><span style="color: #50605A">Down payment</span><span style="font-family: 'IBM Plex Mono', monospace">$50,000</span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 12px; background: #F3F5F4; border-radius: 8px"><span style="color: #50605A">Closing costs</span><span style="font-family: 'IBM Plex Mono', monospace">$12,000</span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 12px; background: #F3F5F4; border-radius: 8px"><span style="color: #50605A">Reserves (2 mo.)</span><span style="font-family: 'IBM Plex Mono', monospace">$10,000</span></div>
+</div>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #D9E0DD; border-radius: 10px; display: flex; flex-direction: column">
+<h2 style="margin: 0; padding: 20px 24px 12px; font-size: 18px; font-weight: 600">Accounts</h2>
+<div style="overflow-x: auto">
+<table style="width: 100%; min-width: 520px; border-collapse: collapse; font-size: 15px">
+<thead>
+<tr style="text-align: left; font-size: 13px; color: #50605A">
+<th style="padding: 10px 24px; font-weight: 600; border-bottom: 1px solid #D9E0DD">Institution</th>
+<th style="padding: 10px 24px; font-weight: 600; border-bottom: 1px solid #D9E0DD">Type</th>
+<th style="padding: 10px 24px; font-weight: 600; border-bottom: 1px solid #D9E0DD">Account</th>
+<th style="padding: 10px 24px; font-weight: 600; border-bottom: 1px solid #D9E0DD; text-align: right">Balance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 14px 24px; border-bottom: 1px solid #E7ECEA; font-weight: 600">[Bank name]</td>
+<td style="padding: 14px 24px; border-bottom: 1px solid #E7ECEA; color: #50605A">Checking</td>
+<td style="padding: 14px 24px; border-bottom: 1px solid #E7ECEA; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #50605A">••••4410</td>
+<td style="padding: 14px 24px; border-bottom: 1px solid #E7ECEA; font-family: 'IBM Plex Mono', monospace; text-align: right">$31,750.00</td>
+</tr>
+<tr>
+<td style="padding: 14px 24px; font-weight: 600">[Bank name]</td>
+<td style="padding: 14px 24px; color: #50605A">Savings</td>
+<td style="padding: 14px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #50605A">••••9026</td>
+<td style="padding: 14px 24px; font-family: 'IBM Plex Mono', monospace; text-align: right">$52,500.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #D9E0DD; border-radius: 10px; display: flex; flex-direction: column">
+<div style="padding: 20px 24px 12px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: baseline">
+<h2 style="margin: 0; font-size: 18px; font-weight: 600">Large deposits to explain</h2>
+<div style="font-size: 13px; color: #50605A">Flagged by rule: single deposit over [threshold]</div>
+</div>
+<div style="overflow-x: auto">
+<table style="width: 100%; min-width: 620px; border-collapse: collapse; font-size: 15px">
+<thead>
+<tr style="text-align: left; font-size: 13px; color: #50605A">
+<th style="padding: 10px 24px; font-weight: 600; border-bottom: 1px solid #D9E0DD">Date</th>
+<th style="padding: 10px 24px; font-weight: 600; border-bottom: 1px solid #D9E0DD">Source</th>
+<th style="padding: 10px 24px; font-weight: 600; border-bottom: 1px solid #D9E0DD; text-align: right">Amount</th>
+<th style="padding: 10px 24px; font-weight: 600; border-bottom: 1px solid #D9E0DD">Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 14px 24px; border-bottom: 1px solid #E7ECEA; font-family: 'IBM Plex Mono', monospace; font-size: 14px">09/18/2026</td>
+<td style="padding: 14px 24px; border-bottom: 1px solid #E7ECEA">Zelle transfer<div style="font-size: 13px; color: #50605A">Savings ••••9026</div></td>
+<td style="padding: 14px 24px; border-bottom: 1px solid #E7ECEA; font-family: 'IBM Plex Mono', monospace; text-align: right; color: #9A4A06; font-weight: 600">$9,500.00</td>
+<td style="padding: 10px 24px; border-bottom: 1px solid #E7ECEA"><div style="display: flex; flex-wrap: wrap; gap: 8px"><button type="button" style="height: 44px; padding: 0 14px; border: 1px solid #0F5C4A; border-radius: 8px; background: #FFFFFF; color: #0F5C4A; font: 600 14px 'IBM Plex Sans', sans-serif">Accept with note</button><button type="button" style="height: 44px; padding: 0 14px; border: 1px solid #B9C4C0; border-radius: 8px; background: #FFFFFF; color: #12211C; font: 600 14px 'IBM Plex Sans', sans-serif">Exclude</button></div></td>
+</tr>
+<tr>
+<td style="padding: 14px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 14px">08/30/2026</td>
+<td style="padding: 14px 24px">Cash deposit<div style="font-size: 13px; color: #50605A">Checking ••••4410</div></td>
+<td style="padding: 14px 24px; font-family: 'IBM Plex Mono', monospace; text-align: right; color: #9A4A06; font-weight: 600">$6,000.00</td>
+<td style="padding: 10px 24px"><div style="display: flex; flex-wrap: wrap; gap: 8px"><button type="button" style="height: 44px; padding: 0 14px; border: 1px solid #0F5C4A; border-radius: 8px; background: #FFFFFF; color: #0F5C4A; font: 600 14px 'IBM Plex Sans', sans-serif">Accept with note</button><button type="button" style="height: 44px; padding: 0 14px; border: 1px solid #B9C4C0; border-radius: 8px; background: #FFFFFF; color: #12211C; font: 600 14px 'IBM Plex Sans', sans-serif">Exclude</button></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+
+<aside style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<section style="background: #FFFFFF; border: 1px solid #D9E0DD; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 18px; font-weight: 600">Bank connection</h2>
+<div style="display: flex; align-items: center; gap: 8px"><span style="padding: 5px 10px; border-radius: 6px; background: #E3F0EC; color: #0F5C4A; font-size: 13px; font-weight: 600">Connected</span><span style="font-size: 13px; color: #50605A">2 accounts via Plaid</span></div>
+<div style="font-size: 14px; color: #50605A; line-height: 1.5">The client authorized access through a secure link. No account or password is stored here.</div>
+<div style="height: 1px; background: #D9E0DD"></div>
+<div style="display: flex; justify-content: space-between; font-size: 14px"><span style="color: #50605A">Report generated</span><span style="font-family: 'IBM Plex Mono', monospace">10/07/2026</span></div>
+<div style="display: flex; justify-content: space-between; font-size: 14px"><span style="color: #50605A">History covered</span><span style="font-family: 'IBM Plex Mono', monospace">60 days</span></div>
+<button type="button" style="height: 44px; border: 1px solid #B9C4C0; border-radius: 8px; background: #FFFFFF; color: #12211C; font: 600 15px 'IBM Plex Sans', sans-serif">Send new link</button>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #D9E0DD; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 18px; font-weight: 600">Activity</h2>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px">
+<div style="display: flex; flex-direction: column; gap: 2px"><div>Report generated</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #50605A">10/07 · 09:12</div></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><div>Client connected bank</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #50605A">10/06 · 18:40</div></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><div>Verification link sent</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #50605A">10/05 · 11:03</div></div>
+</div>
+</section>
+</aside>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1040}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

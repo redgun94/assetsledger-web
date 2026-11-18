@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboarding: professional profile</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F5C4A}a:hover{color:#0A4034}
+</style>
+</helmet>
+<div style="min-height: 900px; background: #F3F5F4; color: #12211C; font-family: 'IBM Plex Sans', system-ui, sans-serif; display: flex; flex-direction: column">
+<header style="padding: 0 40px; min-height: 60px; display: flex; align-items: center; justify-content: space-between; background: #12211C; color: #FFFFFF">
+<div style="font-size: 18px; font-weight: 700">AssetsLedger</div>
+<div style="font-size: 14px; color: #D5DEDA">Step 2 of 2</div>
+</header>
+
+<main style="width: 100%; max-width: 640px; margin: 0 auto; box-sizing: border-box; padding: 48px 24px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 8px" role="img" aria-label="Step 2 of 2: professional profile">
+<div style="flex: 1; height: 6px; border-radius: 3px; background: #0F5C4A"></div>
+<div style="flex: 1; height: 6px; border-radius: 3px; background: #0F5C4A"></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h1 style="margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.01em">Complete your professional profile</h1>
+<div style="font-size: 15px; color: #50605A; line-height: 1.5">You need this before adding clients or sending verification links.</div>
+</div>
+
+<form style="background: #FFFFFF; border: 1px solid #D9E0DD; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 24px">
+<fieldset style="border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px">
+<legend style="padding: 0; font-size: 14px; font-weight: 600; margin-bottom: 8px">Your role</legend>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<label style="display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 14px; border: 2px solid #0F5C4A; border-radius: 8px; background: #E3F0EC; font-size: 15px; font-weight: 600"><input type="radio" name="role" checked="" style="width: 18px; height: 18px; accent-color: #0F5C4A">Loan Officer</label>
+<label style="display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 14px; border: 1px solid #B9C4C0; border-radius: 8px; font-size: 15px"><input type="radio" name="role" style="width: 18px; height: 18px; accent-color: #0F5C4A">Assistant (LOA)</label>
+</div>
+</fieldset>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="nmls" style="font-size: 14px; font-weight: 600">Your NMLS ID</label>
+<input id="nmls" type="text" inputmode="numeric" placeholder="7 digits" style="height: 48px; box-sizing: border-box; padding: 0 12px; border: 1px solid #B9C4C0; border-radius: 8px; font: 500 16px 'IBM Plex Mono', monospace; color: #12211C">
+<div style="font-size: 13px; color: #50605A">Required for loan officers. Optional for assistants.</div>
+</div>
+
+<div style="height: 1px; background: #D9E0DD"></div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="company" style="font-size: 14px; font-weight: 600">Find your company</label>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<input id="company" type="search" value="2045871" style="flex: 1 1 220px; min-width: 0; height: 48px; box-sizing: border-box; padding: 0 12px; border: 1px solid #B9C4C0; border-radius: 8px; font: 500 16px 'IBM Plex Mono', monospace; color: #12211C">
+<button type="button" style="height: 48px; padding: 0 18px; border: 1px solid #B9C4C0; border-radius: 8px; background: #FFFFFF; color: #12211C; font: 600 15px 'IBM Plex Sans', sans-serif">Search</button>
+</div>
+<div style="font-size: 13px; color: #50605A">Search by company NMLS or name.</div>
+</div>
+
+<div style="border: 2px solid #0F5C4A; border-radius: 8px; padding: 16px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="font-size: 16px; font-weight: 600">Sunshine Home Lending LLC</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #50605A">NMLS 2045871 · Lender · Miami, FL</div>
+</div>
+<span style="padding: 5px 10px; border-radius: 6px; background: #E3F0EC; color: #0F5C4A; font-size: 13px; font-weight: 600">Selected</span>
+</div>
+
+<div style="font-size: 14px; color: #50605A">Not listed? <a href="#" style="font-weight: 600">Register your company</a></div>
+
+<button type="button" style="height: 48px; border: 0; border-radius: 8px; background: #0F5C4A; color: #FFFFFF; font: 600 16px 'IBM Plex Sans', sans-serif">Finish setup</button>
+</form>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":900}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
