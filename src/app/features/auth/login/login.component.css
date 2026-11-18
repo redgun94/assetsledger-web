@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+/* Tokens from utils/Paleta y tipografía */
+:host {
+  --ink: #12211c;
+  --muted: #50605a;
+  --line: #d9e0dd;
+  --line-strong: #b9c4c0;
+  --ground: #f3f5f4;
+  --surface: #ffffff;
+  --pine: #0f5c4a;
+  --pine-dark: #0b4a3b;
+  --pine-tint: #e3f0ec;
+  --danger: #b42318;
+  --radius: 8px;
+  --sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+
+  display: block;
+  font-family: var(--sans);
+  color: var(--ink);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Layout */
+.login {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  min-height: 100vh;
+  background: var(--ground);
+}
+
+/* Brand panel */
+.brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px 56px;
+  background: var(--pine);
+  color: #ffffff;
+}
+
+.brand__logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.brand__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 420px;
+}
+
+.brand__eyebrow {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.brand__title {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.brand__foot {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Sample proof-of-funds card */
+.sample {
+  margin-top: 12px;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+.sample__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sample__label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.sample__name {
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.sample__amount {
+  margin-top: 12px;
+  font-family: var(--mono);
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.sample__meta {
+  margin-top: 4px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.chip {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.chip--verified {
+  background: var(--pine-tint);
+  color: var(--pine);
+}
+
+/* Form panel */
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.card__logo {
+  display: none;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.card__subtitle {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.card__footer {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.field__label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.field__control {
+  position: relative;
+}
+
+.field__input {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  font: 400 15px var(--sans);
+  color: var(--ink);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.field__input::placeholder {
+  color: #8a9792;
+}
+
+.field__input:hover {
+  border-color: var(--muted);
+}
+
+.field__input:focus {
+  outline: none;
+  border-color: var(--pine);
+  box-shadow: 0 0 0 3px var(--pine-tint);
+}
+
+.field__input--with-action {
+  padding-right: 64px;
+}
+
+.field__action {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  height: 32px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  font: 600 13px var(--sans);
+  color: var(--pine);
+  cursor: pointer;
+}
+
+.field__action:hover {
+  background: var(--pine-tint);
+}
+
+.field__error {
+  margin: 0;
+  font-size: 13px;
+  color: var(--danger);
+}
+
+/* Checkbox */
+.check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.check__box {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--pine);
+}
+
+/* Buttons & links */
+.btn {
+  height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: var(--radius);
+  font: 600 15px var(--sans);
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.btn--primary {
+  width: 100%;
+  background: var(--pine);
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background: var(--pine-dark);
+}
+
+.btn:focus-visible,
+.link:focus-visible,
+.field__action:focus-visible {
+  outline: 2px solid var(--pine);
+  outline-offset: 2px;
+}
+
+.link {
+  font-weight: 600;
+  color: var(--pine);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link--small {
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .login {
+    grid-template-columns: 1fr;
+  }
+
+  .brand {
+    display: none;
+  }
+
+  .card__logo {
+    display: block;
+  }
+
+  .panel {
+    align-items: flex-start;
+    padding: 40px 16px;
+  }
+}

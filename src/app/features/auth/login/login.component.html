@@ -1,1 +1,81 @@
-<p>login works!</p>
+<main class="login">
+  <!-- Brand panel (hidden on small screens) -->
+  <aside class="brand" aria-hidden="true">
+    <div class="brand__logo">AssetsLedger</div>
+
+    <div class="brand__body">
+      <p class="brand__eyebrow">PROOF OF FUNDS</p>
+      <h2 class="brand__title">Verified balances, ready for underwriting.</h2>
+
+      <div class="sample">
+        <div class="sample__row">
+          <span class="sample__label">Client</span>
+          <span class="chip chip--verified">Verified</span>
+        </div>
+        <div class="sample__name">Daniela Ortiz</div>
+        <div class="sample__amount">$84,250.00</div>
+        <div class="sample__meta">Checking ••••4821 · Updated today</div>
+      </div>
+    </div>
+
+    <div class="brand__foot">NMLS-ready reports · Read-only bank access</div>
+  </aside>
+
+  <!-- Form -->
+  <section class="panel">
+    <div class="card">
+      <div class="card__logo">AssetsLedger</div>
+
+      <header class="card__header">
+        <h1 class="card__title">Sign in</h1>
+        <p class="card__subtitle">Welcome back. Enter your work email to continue.</p>
+      </header>
+
+      <form class="form" novalidate>
+        <div class="field">
+          <label class="field__label" for="email">Email</label>
+          <input
+            id="email"
+            class="field__input"
+            type="email"
+            name="email"
+            autocomplete="email"
+            placeholder="you&#64;company.com"
+          />
+        </div>
+
+        <div class="field">
+          <div class="field__top">
+            <label class="field__label" for="password">Password</label>
+            <a class="link link--small" href="#">Forgot password?</a>
+          </div>
+          <div class="field__control">
+            <input
+              id="password"
+              class="field__input field__input--with-action"
+              type="password"
+              name="password"
+              autocomplete="current-password"
+              placeholder="••••••••"
+            />
+            <button type="button" class="field__action">Show</button>
+          </div>
+          <!-- Example error state -->
+          <p class="field__error">Incorrect email or password.</p>
+        </div>
+
+        <label class="check">
+          <input type="checkbox" class="check__box" name="remember" />
+          <span>Keep me signed in</span>
+        </label>
+
+        <button type="submit" class="btn btn--primary">Sign in</button>
+      </form>
+
+      <p class="card__footer">
+        Don't have an account?
+        <a class="link" href="#">Create one</a>
+      </p>
+    </div>
+  </section>
+</main>
