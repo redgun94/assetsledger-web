@@ -13,7 +13,7 @@ const TOKEN_KEY = 'assetsledger.token';
 export class AuthService {
 
   private readonly http = inject(HttpClient);
-  readonly isLogedIn = signal(this.getToken !== null);
+  readonly isLoggedIn = signal(this.getToken() !== null);
 
   login(credentials : LoginRequest): Observable<AuthResponse>{
 
@@ -22,14 +22,14 @@ export class AuthService {
     return this.http.post<AuthResponse>(apiUrl,credentials).pipe(
       tap(response => {
         localStorage.setItem(TOKEN_KEY,response.accessToken);
-        this.isLogedIn.set(true);
+        this.isLoggedIn.set(true);
       })
     );
   }
 
   logout(): void{
     localStorage.removeItem(TOKEN_KEY);
-    this.isLogedIn.set(false);
+    this.isLoggedIn.set(false);
   }
   getToken():string | null{
     return localStorage.getItem(TOKEN_KEY)
